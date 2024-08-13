@@ -9,6 +9,7 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
 
+
     keymap.set("n", "s", substitute.operator, { desc = "Substitute with motion" })
     keymap.set("n", "ss", substitute.line, { desc = "Substitute line" })
     keymap.set("n", "S", substitute.eol, { desc = "Substitute to end of line" })

@@ -15,12 +15,16 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "alex.plugins"},{import = "alex.plugins.lsp"} } ,{
-checker = {
-    enabled = true,
-    notify = false,
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
+    -- import your plugins
+    { import = "plugins" },
+    { import = "plugins.lsp"},
   },
-change_detection = {
-  notify = false,
-  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
 })
